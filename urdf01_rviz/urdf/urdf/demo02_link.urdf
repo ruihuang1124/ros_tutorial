@@ -1,0 +1,27 @@
+<!--需求： 设置不同形状的机器人部件-->
+<robot name="mycar">
+    <link name="base_link">
+        <!--可视化标签-->
+        <visual>
+            <!--形状-->
+            <geometry>
+                <!--立方体-->
+                <box size="0.3 0.2 0.1" />
+                <!--圆柱-->
+                <!-- <cylinder radius="0.1" length="2"/> -->
+                <!--球体-->
+                <!-- <sphere radius="1" />                -->
+                <!--mesh文件-->
+                <!-- <mesh filename="package://urdf01_rviz/meshes/**.stl" /> -->
+            </geometry>
+
+            <origin xyz="1 0 0" rpy="0 0 0" />
+            
+            <material name="car_color">
+                <color rgba="1 0.2 0 0.5"/>
+            </material>
+
+
+        </visual>
+    </link>
+</robot>
