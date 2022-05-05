@@ -133,8 +133,10 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(srv_demo src/srv_demo.cpp)
+add_executable(srv_demo1 src/srv_demo1.cpp)
 add_executable(client_demo src/client_demo.cpp)
+add_executable(srv_demo2 src/srv_demo2.cpp)
+add_executable(srv_demo3 src/srv_demo3.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -144,17 +146,27 @@ add_executable(client_demo src/client_demo.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(srv_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(srv_demo1 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(client_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(srv_demo2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(srv_demo3 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(srv_demo
+target_link_libraries(srv_demo1
   ${catkin_LIBRARIES}
 )
 
 target_link_libraries(client_demo
   ${catkin_LIBRARIES}
 )
+
+target_link_libraries(srv_demo2
+        ${catkin_LIBRARIES}
+        )
+
+target_link_libraries(srv_demo3
+        ${catkin_LIBRARIES}
+        )
 #############
 ## Install ##
 #############
